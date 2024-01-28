@@ -1,2 +1,8 @@
 .vscode
+
 *.o
+
+# executable
+ex00/megaphone
+ex01/PhoneBook
+

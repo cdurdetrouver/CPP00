@@ -3,7 +3,7 @@ NAME = PhoneBook
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
 INCLUDE = includes
 SRC_DIR = src
-SRC = src/PhoneBook.cpp src/Contact.cpp src/main.cpp
+SRC = $(shell find $(SRC_DIR) -type f -name "*.cpp")
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
