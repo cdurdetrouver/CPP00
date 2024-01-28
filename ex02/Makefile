@@ -3,7 +3,7 @@ NAME = GlobalBank
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
 INCLUDE = includes
 SRC_DIR = src
-SRC = $(shell find $(SRC_DIR) -type f -name "*.cpp")
+SRC = src/Account.cpp src/tests.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
