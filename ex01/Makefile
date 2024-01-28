@@ -1,6 +1,6 @@
 
-NAME = megaphone
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME = PhoneBook
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
 INCLUDE = includes
 SRC_DIR = src
 SRC = $(shell find $(SRC_DIR) -type f -name "*.cpp")
@@ -11,8 +11,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	c++ $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	c++  $(CPPFLAGS) -c $< -o $@
+%.o: %.cpp
+	c++ $(CPPFLAGS) -c $< -o $@
 
 clean:
 	/bin/rm -f $(OBJ)
