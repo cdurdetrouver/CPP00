@@ -2,7 +2,7 @@
 NAME = megaphone
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC_DIR = ./
-SRC = $(shell find $(SRC_DIR) -type f -name "*.cpp")
+SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
