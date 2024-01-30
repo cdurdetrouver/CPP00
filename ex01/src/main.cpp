@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:38:17 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/30 16:12:26 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:57:33 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	main(void)
 		if (input == "ADD")
 		{
 			contact << std::cin;
-			phonebook.add_contact(contact);
+			if (contact.is_correct() == true)
+				phonebook.add_contact(contact);
 		}
 		else if (input == "SEARCH")
 		{
