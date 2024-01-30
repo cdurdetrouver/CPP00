@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
+/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:38:17 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/28 17:05:04 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/01/30 16:12:26 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ int	main(void)
 	{
 		std::cout << "Please enter a command (ADD, SEARCH or EXIT): ";
 		std::getline(std::cin, input);
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cerr << "got eof";
+			return (0);
+		}
 		if (input == "ADD")
 		{
 			contact << std::cin;
@@ -42,6 +48,8 @@ int	main(void)
 			std::cout << "EXIT" << std::endl;
 			quit = true;
 		}
+		else
+			std::cout << input << ": command not found" << std::endl;
 	}
 	return (0);
 }
