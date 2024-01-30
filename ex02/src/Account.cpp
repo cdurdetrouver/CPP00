@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
+/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 17:34:41 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/28 23:25:26 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:38:31 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	_totalAmount -= withdrawal;
 	_totalNbWithdrawals++;
 	_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";deposit:" << withdrawal << ";amount:" << this->_amount << ";nb_deposits:" << this->_nbWithdrawals << std::endl;
+	std::cout << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	return (true);
 }
 
