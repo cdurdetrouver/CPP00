@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 18:52:11 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/30 16:11:20 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:58:18 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,32 @@ void	Contact::operator<<(std::istream &i)
 		return ;
 	}
 	this->set_darkest_secret(input);
+}
+
+bool	Contact::is_correct(void)
+{
+	std::string	strings[5] = {
+		this->_first_name,
+		this->_last_name,
+		this->_nickname,
+		this->_phone,
+		this->_darkest_secret
+	};
+	for (int i = 0; i < 5; i++)
+	{
+		if (strings[i].empty())
+		{
+			std::cerr << "Cannot take empty info" << std::endl;
+			return (false);
+		}
+	}
+	for (int i = 0; i < (int)strings[3].length(); i++)
+	{
+		if (strings[3][i] < 48 || strings[3][i] > 57)
+		{
+			std::cerr << "Phone should be only number" << std::endl;
+			return (false);
+		}
+	}
+	return (true);
 }
