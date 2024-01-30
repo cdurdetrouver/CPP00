@@ -25,6 +25,7 @@ class Contact
 		std::string	get_nickname(void);
 		std::string	get_phone(void);
 		std::string	get_darkest_secret(void);
+		bool	is_correct(void);
 		void	operator<<(std::istream &i);
 };
 
