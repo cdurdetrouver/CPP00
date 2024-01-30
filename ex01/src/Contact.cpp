@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
+/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 18:52:11 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/28 17:04:58 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/01/30 16:11:20 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,44 @@ void	Contact::operator<<(std::istream &i)
 {
 	std::string input;
 
-	(void)i;
 	std::cout << "Please enter the first name: ";
-	std::getline(std::cin, input);
+	std::getline(i, input);
+	if (std::cin.fail())
+	{
+		std::cerr << std::endl;
+		return ;
+	}
 	this->set_first_name(input);
 	std::cout << "Please enter the last name: ";
-	std::getline(std::cin, input);
+	std::getline(i, input);
+	if (std::cin.fail())
+	{
+		std::cerr << std::endl;
+		return ;
+	}
 	this->set_last_name(input);
 	std::cout << "Please enter the nickname: ";
-	std::getline(std::cin, input);
+	std::getline(i, input);
+	if (std::cin.fail())
+	{
+		std::cerr << std::endl;
+		return ;
+	}
 	this->set_nickname(input);
 	std::cout << "Please enter the phone number: ";
-	std::getline(std::cin, input);
+	std::getline(i, input);
+	if (std::cin.fail())
+	{
+		std::cerr << std::endl;
+		return ;
+	}
 	this->set_phone(input);
 	std::cout << "Please enter the darkest secret: ";
-	std::getline(std::cin, input);
+	std::getline(i, input);
+	if (std::cin.fail())
+	{
+		std::cerr << std::endl;
+		return ;
+	}
 	this->set_darkest_secret(input);
 }
