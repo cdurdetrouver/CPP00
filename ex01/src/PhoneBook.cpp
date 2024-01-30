@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
+/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:53:34 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/28 17:16:23 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/01/30 16:11:35 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ void	PhoneBook::search_contact(void)
 
 	std::cout << "Please enter an index: ";
 	std::getline(std::cin, input);
+	if (std::cin.fail())
+	{
+		std::cerr << std::endl;
+		return ;
+	}
 	if (input.length() == 1 && input[0] >= '0' && input[0] <= '7')
 	{
 		i = input[0] - '0';
