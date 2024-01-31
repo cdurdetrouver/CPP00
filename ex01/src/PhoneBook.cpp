@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:53:34 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/30 16:11:35 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/01/31 09:57:34 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,21 @@ void	PhoneBook::operator>>(std::ostream &o)
 	o << "     index|first name| last name|  nickname" << std::endl;
 	while (i < 8)
 	{
-		if (this->contacts[i].get_first_name() != "")
+		if (!contacts[i].get_first_name().empty())
 		{
 			o << "         " << i << "|";
 			if (this->contacts[i].get_first_name().length() > 10)
-				o << std::setw(10) << this->contacts[i].get_first_name().substr(0, 9) << ".|";
+				o << std::setw(10) << (this->contacts[i].get_first_name().substr(0, 9) + ".|");
 			else
 				o << std::setw(10) << this->contacts[i].get_first_name() << "|";
 			if (this->contacts[i].get_last_name().length() > 10)
-				o << std::setw(10) << this->contacts[i].get_last_name().substr(0, 9) << ".|";
+				o << std::setw(10) << (this->contacts[i].get_last_name().substr(0, 9) + ".|");
 			else
 				o << std::setw(10) << this->contacts[i].get_last_name() << "|";
 			if (this->contacts[i].get_nickname().length() > 10)
-				o << std::setw(10) << this->contacts[i].get_nickname().substr(0, 9) << ".|";
+				o << std::setw(10) << (this->contacts[i].get_nickname().substr(0, 9) + ".");
 			else
-				o << std::setw(10) << this->contacts[i].get_nickname() << "|";
+				o << std::setw(10) << this->contacts[i].get_nickname();
 			o << std::endl;
 		}
 		i++;
