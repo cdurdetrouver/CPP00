@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 18:52:11 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/30 18:58:18 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/01/31 09:42:32 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ bool	Contact::is_correct(void)
 	}
 	for (int i = 0; i < (int)strings[3].length(); i++)
 	{
-		if (strings[3][i] < 48 || strings[3][i] > 57)
+		if ((strings[3][i] < 48 || strings[3][i] > 57) && strings[3][i] != 32)
 		{
 			std::cerr << "Phone should be only number" << std::endl;
 			return (false);
